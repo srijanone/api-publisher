@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains api_publisher.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function api_publisher_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the api_publisher module.
+    case 'help.page.api_publisher':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Publish OAS (2.0+) to any API Gateway with version/lifecycle management.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
