@@ -1,0 +1,15 @@
+entity.api_gateway.add_form:
+  route_name: entity.api_gateway.add_form
+  title: 'Add APIGateway'
+  appears_on:
+    - entity.api_gateway.collection
+entity.open_api_spec.add_form:
+  route_name: entity.open_api_spec.add_form
+  title: 'Add OpenAPI Specification'
+  appears_on:
+    - entity.open_api_spec.collection
+entity.proxy.add_form:
+  route_name: entity.proxy.add_form
+  title: 'Add Proxy'
+  appears_on:
+    - entity.proxy.collection

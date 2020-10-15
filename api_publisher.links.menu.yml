@@ -1,0 +1,42 @@
+
+# APIGateway menu items definition
+entity.api_gateway.collection:
+  title: 'APIGateway list'
+  route_name: entity.api_gateway.collection
+  description: 'List APIGateway entities'
+  parent: system.admin_structure
+  weight: 100
+
+api_gateway.admin.structure.settings:
+  title: 'APIGateway settings'
+  description: 'Configure APIGateway entities'
+  route_name: api_gateway.settings
+  parent: system.admin_structure
+
+# OpenAPI Specification menu items definition
+entity.open_api_spec.collection:
+  title: 'OpenAPI Specification list'
+  route_name: entity.open_api_spec.collection
+  description: 'List OpenAPI Specification entities'
+  parent: system.admin_structure
+  weight: 100
+
+open_api_spec.admin.structure.settings:
+  title: 'OpenAPI Specification settings'
+  description: 'Configure OpenAPI Specification entities'
+  route_name: open_api_spec.settings
+  parent: system.admin_structure
+
+# Proxy menu items definition
+entity.proxy.collection:
+  title: 'Proxy list'
+  route_name: entity.proxy.collection
+  description: 'List Proxy entities'
+  parent: system.admin_structure
+  weight: 100
+
+proxy.admin.structure.settings:
+  title: 'Proxy settings'
+  description: 'Configure Proxy entities'
+  route_name: proxy.settings
+  parent: system.admin_structure

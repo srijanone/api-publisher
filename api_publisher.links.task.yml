@@ -1,0 +1,78 @@
+# APIGateway routing definition
+api_gateway.settings_tab:
+  route_name: api_gateway.settings
+  title: 'Settings'
+  base_route: api_gateway.settings
+
+entity.api_gateway.canonical:
+  route_name: entity.api_gateway.canonical
+  base_route: entity.api_gateway.canonical
+  title: 'View'
+
+entity.api_gateway.edit_form:
+  route_name: entity.api_gateway.edit_form
+  base_route: entity.api_gateway.canonical
+  title: 'Edit'
+
+entity.api_gateway.version_history:
+  route_name: entity.api_gateway.version_history
+  base_route: entity.api_gateway.canonical
+  title: 'Revisions'
+
+entity.api_gateway.delete_form:
+  route_name:  entity.api_gateway.delete_form
+  base_route:  entity.api_gateway.canonical
+  title: Delete
+  weight: 10
+# OpenAPI Specification routing definition
+open_api_spec.settings_tab:
+  route_name: open_api_spec.settings
+  title: 'Settings'
+  base_route: open_api_spec.settings
+
+entity.open_api_spec.canonical:
+  route_name: entity.open_api_spec.canonical
+  base_route: entity.open_api_spec.canonical
+  title: 'View'
+
+entity.open_api_spec.edit_form:
+  route_name: entity.open_api_spec.edit_form
+  base_route: entity.open_api_spec.canonical
+  title: 'Edit'
+
+entity.open_api_spec.version_history:
+  route_name: entity.open_api_spec.version_history
+  base_route: entity.open_api_spec.canonical
+  title: 'Revisions'
+
+entity.open_api_spec.delete_form:
+  route_name:  entity.open_api_spec.delete_form
+  base_route:  entity.open_api_spec.canonical
+  title: Delete
+  weight: 10
+# Proxy routing definition
+proxy.settings_tab:
+  route_name: proxy.settings
+  title: 'Settings'
+  base_route: proxy.settings
+
+entity.proxy.canonical:
+  route_name: entity.proxy.canonical
+  base_route: entity.proxy.canonical
+  title: 'View'
+
+entity.proxy.edit_form:
+  route_name: entity.proxy.edit_form
+  base_route: entity.proxy.canonical
+  title: 'Edit'
+
+entity.proxy.version_history:
+  route_name: entity.proxy.version_history
+  base_route: entity.proxy.canonical
+  title: 'Revisions'
+
+entity.proxy.delete_form:
+  route_name:  entity.proxy.delete_form
+  base_route:  entity.proxy.canonical
+  title: Delete
+  weight: 10

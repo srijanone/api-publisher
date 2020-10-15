@@ -1,0 +1,93 @@
+add apigateway entities:
+  title: 'Create new APIGateway entities'
+
+administer apigateway entities:
+  title: 'Administer APIGateway entities'
+  description: 'Allow to access the administration form to configure APIGateway entities.'
+  restrict access: true
+
+delete apigateway entities:
+  title: 'Delete APIGateway entities'
+
+edit apigateway entities:
+  title: 'Edit APIGateway entities'
+
+view published apigateway entities:
+  title: 'View published APIGateway entities'
+
+view unpublished apigateway entities:
+  title: 'View unpublished APIGateway entities'
+
+view all apigateway revisions:
+  title: 'View all APIGateway revisions'
+
+revert all apigateway revisions:
+  title: 'Revert all APIGateway revisions'
+  description: 'Role requires permission <em>view APIGateway revisions</em> and <em>edit rights</em> for apigateway entities in question or <em>administer apigateway entities</em>.'
+
+delete all apigateway revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view APIGateway revisions</em> and <em>delete rights</em> for apigateway entities in question or <em>administer apigateway entities</em>.'
+
+add openapi specification entities:
+  title: 'Create new OpenAPI Specification entities'
+
+administer openapi specification entities:
+  title: 'Administer OpenAPI Specification entities'
+  description: 'Allow to access the administration form to configure OpenAPI Specification entities.'
+  restrict access: true
+
+delete openapi specification entities:
+  title: 'Delete OpenAPI Specification entities'
+
+edit openapi specification entities:
+  title: 'Edit OpenAPI Specification entities'
+
+view published openapi specification entities:
+  title: 'View published OpenAPI Specification entities'
+
+view unpublished openapi specification entities:
+  title: 'View unpublished OpenAPI Specification entities'
+
+view all openapi specification revisions:
+  title: 'View all OpenAPI Specification revisions'
+
+revert all openapi specification revisions:
+  title: 'Revert all OpenAPI Specification revisions'
+  description: 'Role requires permission <em>view OpenAPI Specification revisions</em> and <em>edit rights</em> for openapi specification entities in question or <em>administer openapi specification entities</em>.'
+
+delete all openapi specification revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view OpenAPI Specification revisions</em> and <em>delete rights</em> for openapi specification entities in question or <em>administer openapi specification entities</em>.'
+
+add proxy entities:
+  title: 'Create new Proxy entities'
+
+administer proxy entities:
+  title: 'Administer Proxy entities'
+  description: 'Allow to access the administration form to configure Proxy entities.'
+  restrict access: true
+
+delete proxy entities:
+  title: 'Delete Proxy entities'
+
+edit proxy entities:
+  title: 'Edit Proxy entities'
+
+view published proxy entities:
+  title: 'View published Proxy entities'
+
+view unpublished proxy entities:
+  title: 'View unpublished Proxy entities'
+
+view all proxy revisions:
+  title: 'View all Proxy revisions'
+
+revert all proxy revisions:
+  title: 'Revert all Proxy revisions'
+  description: 'Role requires permission <em>view Proxy revisions</em> and <em>edit rights</em> for proxy entities in question or <em>administer proxy entities</em>.'
+
+delete all proxy revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Proxy revisions</em> and <em>delete rights</em> for proxy entities in question or <em>administer proxy entities</em>.'
+

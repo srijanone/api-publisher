@@ -1,0 +1,22 @@
+{#
+/**
+ * @file api_gateway.html.twig
+ * Default theme implementation to present APIGateway data.
+ *
+ * This template is used when viewing APIGateway pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_api_gateway()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('api_gateway') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>
