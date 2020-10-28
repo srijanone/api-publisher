@@ -213,11 +213,11 @@ class OpenAPISpec extends EditorialContentEntityBase implements OpenAPISpecInter
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'string',
-        'weight' => -4,
+        'weight' => -6,
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -4,
+        'weight' => -6,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
@@ -229,17 +229,17 @@ class OpenAPISpec extends EditorialContentEntityBase implements OpenAPISpecInter
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'string',
-        'weight' => -4,
+        'weight' => -5,
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -4,
+        'weight' => -5,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(FALSE);
 
-    $fields['openapi_sec'] = BaseFieldDefinition::create('string_long')
+    $fields['openapi_spec'] = BaseFieldDefinition::create('string_long')
       ->setLabel(t('OpenAPI Spec'))
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
@@ -261,7 +261,7 @@ class OpenAPISpec extends EditorialContentEntityBase implements OpenAPISpecInter
     $fields['status']->setDescription(t('A boolean indicating whether the OpenAPI Specification is published.'))
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
-        'weight' => -3,
+        'weight' => -2,
       ]);
 
     $fields['created'] = BaseFieldDefinition::create('created')
