@@ -9,7 +9,6 @@ use Drupal\Core\Ajax\RemoveCommand;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use TheRealGambo\Kong\Kong;
 use Drupal\api_publisher\Entity\Proxy;
-use Drupal\api_publisher\Entity\APIGateway;
 use Symfony\Component\Yaml\Yaml;
 
 /**
