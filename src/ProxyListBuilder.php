@@ -46,6 +46,7 @@ class ProxyListBuilder extends EntityListBuilder {
     );
     // Snapshot status.
     $specId = $entity->openapi_spec->target_id;
+    // @todo inject entitytype manager service.
     $openApiSpec = \Drupal::entityTypeManager()->getStorage('open_api_spec')->load($specId);
     if ($entity->snapshot->value == base64_encode($openApiSpec->openapi_spec->value)) {
       // @todo We could add the template for html content.
@@ -64,6 +65,7 @@ class ProxyListBuilder extends EntityListBuilder {
   public function buildOperations(EntityInterface $entity) {
     $id = $entity->id();
     $specId = $entity->openapi_spec->target_id;
+    // @todo inject entitytype manager service.
     $openApiSpec = \Drupal::entityTypeManager()->getStorage('open_api_spec')->load($specId);
     if ($entity->snapshot->value != base64_encode($openApiSpec->openapi_spec->value)) {
       $operations['sync_snapshot'] = [
