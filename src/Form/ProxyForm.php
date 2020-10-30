@@ -64,15 +64,10 @@ class ProxyForm extends ContentEntityForm {
    */
   public function save(array $form, FormStateInterface $form_state) {
     $entity = $this->entity;
-    $entity_id = $entity->id();
-    $specId = $entity->openapi_spec->target_id;
-    $openApiSpec = $this->entityTypeManager->getStorage('open_api_spec')->load($specId);
-
+    $openApiSpec = $entity->get('openapi_spec')->entity;
     // Update snapshot value with the current openapi specification.
     if(!empty($openApiSpec->openapi_spec->value)) {
       $entity->snapshot->value = base64_encode($openApiSpec->openapi_spec->value);
-      $updateProxy = new ProxyUpdateController;
-      $updateProxy->updateSnapshot($entity_id);
     }
 
     // Save as a new revision if requested to do so.
@@ -88,6 +83,11 @@ class ProxyForm extends ContentEntityForm {
     }
 
     $status = parent::save($form, $form_state);
+
+    // Register Proxy on API gateway.
+    $entity_id = $entity->id();
+    $updateProxy = new ProxyUpdateController;
+    $updateProxy->updateSnapshot($entity_id);
 
     switch ($status) {
       case SAVED_NEW:

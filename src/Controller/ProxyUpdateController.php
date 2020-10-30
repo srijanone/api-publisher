@@ -32,18 +32,17 @@ class ProxyUpdateController extends ControllerBase implements ContainerInjection
     $entity = $this->entityTypeManager()->getStorage('proxy')
       ->load($entity_id);
     $openApiSpec = $entity->get('openapi_spec')->entity;
-    if ($entity->snapshot->value != base64_encode($openApiSpec->openapi_spec->value)) {
-      $entity->snapshot->value = base64_encode($openApiSpec->openapi_spec->value);
-      $entity->save();
-      // Proxy snapshot on Apigateway.
-      $updateProxy = $this->updateProxy($entity, $openApiSpec);
-      // Replace HTML markup inside the div via a selector.
-      $text = '<i class="fa fa-check" aria-hidden="true"></i>';
-      $selector = '#sync-status-' . $entity_id;
-      $class = '.sync-snapshot-' . $entity_id;
-      $response->addCommand(new ReplaceCommand($selector, $text));
-      $response->addCommand(new RemoveCommand($class));
-    }
+    $entity->snapshot->value = base64_encode($openApiSpec->openapi_spec->value);
+    $entity->save();
+    // Proxy snapshot on Apigateway.
+    $updateProxy = $this->updateProxy($entity, $openApiSpec);
+    // Replace HTML markup inside the div via a selector.
+    $text = '<i class="fa fa-check" aria-hidden="true"></i>';
+    $selector = '#sync-status-' . $entity_id;
+    $class = '.sync-snapshot-' . $entity_id;
+    $response->addCommand(new ReplaceCommand($selector, $text));
+    $response->addCommand(new RemoveCommand($class));
+
     return $response;
   }
 
