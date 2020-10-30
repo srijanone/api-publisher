@@ -3,3 +3,5 @@ type: module
 description: 'Publish OAS (2.0+) to any API Gateway with version/lifecycle management.'
 core: 8.x
 package: 'APIM'
+dependencies:
+  - yaml_editor:yaml_editor

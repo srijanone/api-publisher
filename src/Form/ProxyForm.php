@@ -5,6 +5,8 @@ namespace Drupal\api_publisher\Form;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\api_publisher\Controller\ProxyUpdateController;
 
 /**
  * Form controller for Proxy edit forms.
@@ -21,12 +23,20 @@ class ProxyForm extends ContentEntityForm {
   protected $account;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
     // Instantiates this form class.
     $instance = parent::create($container);
     $instance->account = $container->get('current_user');
+    $instance->entityTypeManager = $container->get('entity_type.manager');
     return $instance;
   }
 
@@ -54,6 +64,11 @@ class ProxyForm extends ContentEntityForm {
    */
   public function save(array $form, FormStateInterface $form_state) {
     $entity = $this->entity;
+    $openApiSpec = $entity->get('openapi_spec')->entity;
+    // Update snapshot value with the current openapi specification.
+    if(!empty($openApiSpec->openapi_spec->value)) {
+      $entity->snapshot->value = base64_encode($openApiSpec->openapi_spec->value);
+    }
 
     // Save as a new revision if requested to do so.
     if (!$form_state->isValueEmpty('new_revision') && $form_state->getValue('new_revision') != FALSE) {
@@ -68,6 +83,11 @@ class ProxyForm extends ContentEntityForm {
     }
 
     $status = parent::save($form, $form_state);
+
+    // Register Proxy on API gateway.
+    $entity_id = $entity->id();
+    $updateProxy = new ProxyUpdateController;
+    $updateProxy->updateSnapshot($entity_id);
 
     switch ($status) {
       case SAVED_NEW:

@@ -1,0 +1,9 @@
+api_publisher.update_snapshot:
+  path: '/admin/structure/proxy/{entity_id}/sync'
+  defaults:
+    _controller: '\Drupal\api_publisher\Controller\ProxyUpdateController::updateSnapshot'
+    _title: 'Update snapshot'
+  requirements:
+    _permission: 'view published proxy entities'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,9 @@
+api_publisher.webfonts:
+  remote: https://cdnjs.cloudflare.com
+  license:
+    name: SIL OFL 1.1
+    url: http://scripts.sil.org/OFL
+    gpl-compatible: true
+  css:
+    theme:
+      //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }

@@ -292,6 +292,22 @@ class Proxy extends EditorialContentEntityBase implements ProxyInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
       ->setRequired(TRUE);
+
+    $fields['snapshot'] = BaseFieldDefinition::create('string_long')
+      ->setLabel(t('Snapshot'))
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+        'weight' => -3,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -3,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(FALSE);
     
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
